@@ -14,12 +14,20 @@ output "alb_zone_id" {
   value = "${aws_lb.ecs.*.zone_id}"
 }
 
-output "iam_role_arn" {
+output "ecs_iam_role_arn" {
   value = "${aws_iam_role.ecs.arn}"
 }
 
-output "iam_role_name" {
+output "ecs_iam_role_name" {
   value = "${aws_iam_role.ecs.name}"
+}
+
+output "ecs_service_iam_role_arn" {
+  value = "${aws_iam_role.ecs_service.arn}"
+}
+
+output "ecs_service_iam_role_name" {
+  value = "${aws_iam_role.ecs_service.name}"
 }
 
 output "ecs_id" {
@@ -28,6 +36,10 @@ output "ecs_id" {
 
 output "ecs_arn" {
   value = "${aws_ecs_cluster.ecs.arn}"
+}
+
+output "ecs_name" {
+  value = "${aws_ecs_cluster.ecs.name}"
 }
 
 output "alb_listener_https_arn" {
